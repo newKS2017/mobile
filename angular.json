@@ -124,5 +124,8 @@
       }
     }
   },
-  "defaultProject": "practice20200420"
+  "defaultProject": "practice20200420",
+  "cli": {
+    "analytics": "9be25e47-f973-4d2e-ab4d-6c3aa3189712"
+  }
 }
