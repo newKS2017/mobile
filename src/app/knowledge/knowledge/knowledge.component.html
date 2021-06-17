@@ -1,0 +1,33 @@
+<div class="knowledge">
+    <div class="search">
+        <SearchBar [placeholder]="'搜索'" [defaultValue]="'这是默认值'" 
+            [(ngModel)]="value" 
+            (onBlur)="blur()"
+            (onFocus)="focus()"
+            (onCancel)="cancel()"
+            (onClear)="clear(value)"
+            (onSubmit)="submit(value)"
+            (ngModelChange)="change($event)">
+        </SearchBar>
+    </div>
+    <div class="content">
+        <ng-container *ngFor="let it of nowData;let i=index;">
+            <div *ngIf="indexPage == i">
+                <h1>{{it.title}}</h1>
+                <div [innerHTML]="it.content"></div>
+            </div>
+        </ng-container>
+        <div class="page" *ngIf="nowData.length > 0">
+            <span>{{indexPage+1}}</span>
+            /
+            <span>{{nowData.length}}</span>
+        </div>
+    </div>
+</div>
+<a class="left" (click)="turnPage(false)">
+    <Icon [type]="'left'" [size]="'md'"></Icon>
+</a>
+<a class="right" (click)="turnPage(true)">
+    <Icon [type]="'right'" [size]="'md'"></Icon>
+</a>
+<app-footer></app-footer>

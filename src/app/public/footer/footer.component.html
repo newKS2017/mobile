@@ -1,0 +1,8 @@
+<div class="footer">
+    <ul class="clearfix">
+        <li class="fl" *ngFor="let it of navList;let i=index" [ngClass]="{'active':index==i+1}" (click)="select(i)" [routerLink]="[it.link]">
+            <!-- <i nz-icon nzType="home" nzTheme="outline"></i> -->
+            <span>{{it.name}}</span>
+        </li>
+    </ul>
+</div>
